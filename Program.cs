@@ -1,13 +1,42 @@
-﻿namespace CSProblems
+﻿using System.Numerics;
+
+namespace CSProblems
 {
     class Problems
     {
 
-        public int FactorialCalculator(int num)
-        {
-            Console.WriteLine(num);
 
-            return FactorialCalculator(num * num-1);
+        static BigInteger FactorialCalculator(BigInteger num)
+        {
+            
+            if (num <= 1) return 1;
+
+            return num * FactorialCalculator(num-1);
+
+        }
+
+        static bool IsPalindrome(string s)
+        {
+            s = s.Trim().ToLower();
+            int counter = s.Length-1;
+
+            for (int i = 0; i < s.Length/2; i++) 
+            {
+                if (counter == (s.Length / 2) )
+                {
+                    break;
+                }
+                if (s[i] != s[counter])
+                {
+                    return false;
+                }
+
+                counter--;
+
+            }
+
+
+            return true;
         }
 
         static void Main()
@@ -25,19 +54,43 @@
             #endregion
 
             #region Program to calculate the factorial of a number
-            
-            
 
-            int fact = Factoriaò
+
+            //Console.WriteLine("Waht number do you want to calculate factorial for?");
+            //BigInteger num = BigInteger.Parse(Console.ReadLine());
+            //BigInteger fact = FactorialCalculator(num);
+            //Console.WriteLine($"The factorial of {num} is {fact}");
 
             #endregion
 
             #region Program to check if a given string is a palindrome
-            // Code goes here
+
+            //Console.WriteLine("Insert a string and i'll tell you f it's a Palindrome or not");
+
+            //bool ans = IsPalindrome(Console.ReadLine());
+
+            //Console.WriteLine($"The string you typed in is {(ans ? "a" : "NOT a")} PALINDROME");
+
+
             #endregion
 
             #region Program to find the sum of digits of a number
-            // Code goes here
+            //Console.WriteLine("Insert a number");
+            //int num = int.Parse(Console.ReadLine());
+
+            //string convertedNumber = num.ToString();
+            //num = 0;
+            //string temp;
+
+            //for (int i = 0; i < convertedNumber.Length; i++) 
+            //{
+            //    temp = convertedNumber[i].ToString();
+            //    num += int.Parse(temp);
+            //}
+            //Console.WriteLine($"Thes sum of all the digits is {num} and the original number was {convertedNumber}");
+
+
+
             #endregion
 
             #region Program to calculate the area of different geometric shapes (circle, rectangle, triangle)
